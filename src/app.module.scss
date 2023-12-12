@@ -1,0 +1,11 @@
+.app {
+  @apply bg-main text-main w-full h-full flex flex-col items-center justify-center gap-10 box-border p-10;
+}
+
+.title {
+  @apply font-ubuntu-700 text-3xl;
+}
+
+.span {
+  @apply text-terminal leading-6 bg-terminal p-1;
+}
