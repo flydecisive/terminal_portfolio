@@ -3,9 +3,9 @@
 }
 
 .title {
-  @apply font-ubuntu-700 text-3xl;
+  @apply font-ubuntu-400 text-4xl mx-auto w-[55rem] relative px-[5px] h-10 after:content-['|'] after:absolute after:w-full after:right-0 after:bg-main after:animate-typing-text after:text-terminal ;
 }
 
 .span {
-  @apply text-terminal leading-6 bg-terminal p-1;
+  @apply text-terminal font-ubuntu-700;
 }
