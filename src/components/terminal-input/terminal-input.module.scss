@@ -1,0 +1,19 @@
+.wrapper {
+    @apply flex gap-3 flex-nowrap w-full box-border text-base
+}
+
+.input {
+    @apply outline-none bg-transparent w-72 font-ubuntu-400 text-terminal
+}
+
+.user {
+    @apply text-terminal
+}
+
+.author {
+    @apply text-main
+}
+
+.path {
+    @apply w-fit text-menu
+}
