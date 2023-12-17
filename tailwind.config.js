@@ -23,7 +23,7 @@ export default {
         main: "#9d0ffd",
       },
       animation: {
-        "typing-text": "typing 4s steps(55) forwards, blink 1s infinite",
+        "typing-text": "typing 3s steps(55) forwards, blink 1s infinite",
       },
       keyframes: {
         typing: {

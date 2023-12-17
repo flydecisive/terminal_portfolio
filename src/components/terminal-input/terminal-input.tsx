@@ -1,10 +1,17 @@
 import { useState } from "react";
 import styles from "./terminal-input.module.scss";
 import { UseCommandContext } from "../../contexts/command";
+import { UseContentContext } from "../../contexts/content";
 
-function TerminalInput() {
+interface ITerminalInputProps {
+  id: number;
+}
+
+function TerminalInput({ id }: ITerminalInputProps) {
   const [inputValue, setInputValue] = useState<string>("");
+  // const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const { setCommand } = UseCommandContext();
+  const { content, setContent } = UseContentContext();
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.target.value = e.target.value.replace(/[^a-z,A-Z]/, "");
@@ -14,6 +21,9 @@ function TerminalInput() {
   const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && inputValue.length > 0) {
       setCommand(inputValue);
+      const newContent = [...content];
+      newContent[id].disabled = true;
+      setContent(newContent);
     }
   };
 
@@ -29,6 +39,7 @@ function TerminalInput() {
         maxLength={20}
         onInput={handleInput}
         onKeyDown={handleEnter}
+        disabled={content?.[id].disabled}
       />
     </div>
   );
