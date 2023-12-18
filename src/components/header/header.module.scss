@@ -1,0 +1,11 @@
+.wrapper {
+    @apply flex flex-col w-full;
+}
+
+.dev {
+    @apply font-pixel text-4xl text-main;
+}
+
+.text {
+    @apply font-ubuntu-400 text-base text-terminal mb-5;
+}

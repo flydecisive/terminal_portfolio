@@ -9,6 +9,7 @@ export default {
         "ubuntu-400": ["Ubuntu-400", "sans-serif"],
         "ubuntu-500": ["Ubuntu-500", "sans-serif"],
         "ubuntu-700": ["Ubuntu-700", "sans-serif"],
+        pixel: ["Pixel"],
       },
       backgroundColor: {
         main: "#211830",

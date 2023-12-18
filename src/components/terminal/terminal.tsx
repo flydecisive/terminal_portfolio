@@ -5,11 +5,9 @@ import TerminalInput from "../terminal-input/terminal-input";
 import { useEffect } from "react";
 import { UseCommandContext } from "../../contexts/command";
 import { UseContentContext } from "../../contexts/content";
+import Header from "../header/header";
 
 function Terminal() {
-  // const [content, setContent] = useState([
-  //   { type: "terminal", disabled: false },
-  // ]);
   const { command } = UseCommandContext();
   const { content, setContent } = UseContentContext();
 
@@ -25,6 +23,8 @@ function Terminal() {
   const chooseContent = (el: any, index: number) => {
     if (el?.type === "terminal") {
       return <TerminalInput key={index} id={index} />;
+    } else if (el?.type === "header") {
+      return <Header key={index} />;
     }
   };
 

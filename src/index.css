@@ -22,6 +22,11 @@
   src: url(../src/assets/fonts/Ubuntu/Ubuntu-Bold.ttf);
 }
 
+@font-face {
+  font-family: "Pixel";
+  src: url(../src/assets/fonts/PressStart2P-Regular.ttf);
+}
+
 * {
   @apply p-0 m-0;
 }

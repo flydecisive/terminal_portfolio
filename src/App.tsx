@@ -8,6 +8,7 @@ import { ContentContext } from "./contexts/content";
 function App() {
   const [command, setCommand] = useState<string>("");
   const [content, setContent] = useState<any>([
+    { type: "header", disabled: true },
     { type: "terminal", disabled: false },
   ]);
 
