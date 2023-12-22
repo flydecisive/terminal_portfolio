@@ -8,7 +8,7 @@ import { UseContentContext } from "../../contexts/content";
 import Header from "../header/header";
 
 function Terminal() {
-  const { command } = UseCommandContext();
+  const { command, setCommand } = UseCommandContext();
   const { content, setContent } = UseContentContext();
 
   useEffect(() => {
@@ -16,9 +16,12 @@ function Terminal() {
       const newContent = [...content];
       newContent.push({ type: "terminal", disabled: false });
       setContent(newContent);
-      console.log(newContent);
     }
   }, [command]);
+
+  useEffect(() => {
+    setCommand("");
+  }, [content]);
 
   const chooseContent = (el: any, index: number) => {
     if (el?.type === "terminal") {

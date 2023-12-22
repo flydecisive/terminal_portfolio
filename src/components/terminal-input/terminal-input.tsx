@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { useState, useRef, useEffect } from "react";
 import styles from "./terminal-input.module.scss";
 import { UseCommandContext } from "../../contexts/command";
 import { UseContentContext } from "../../contexts/content";
@@ -12,6 +13,7 @@ function TerminalInput({ id }: ITerminalInputProps) {
   // const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const { setCommand } = UseCommandContext();
   const { content, setContent } = UseContentContext();
+  const ref = useRef(null);
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.target.value = e.target.value.replace(/[^a-z,A-Z]/, "");
@@ -27,6 +29,13 @@ function TerminalInput({ id }: ITerminalInputProps) {
     }
   };
 
+  useEffect(() => {
+    if (ref) {
+      // @ts-ignore
+      ref?.current?.focus();
+    }
+  }, [ref]);
+
   return (
     <div className={styles.wrapper}>
       <p className={styles.path}>
@@ -40,6 +49,7 @@ function TerminalInput({ id }: ITerminalInputProps) {
         onInput={handleInput}
         onKeyDown={handleEnter}
         disabled={content?.[id].disabled}
+        ref={ref}
       />
     </div>
   );
