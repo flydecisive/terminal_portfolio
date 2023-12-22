@@ -32,8 +32,10 @@ function Terminal() {
   };
 
   return (
-    <div className={styles.container}>
-      {content.map((el: any, index: number) => chooseContent(el, index))}
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        {content.map((el: any, index: number) => chooseContent(el, index))}
+      </div>
     </div>
   );
 }

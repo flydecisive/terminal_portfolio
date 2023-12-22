@@ -1,3 +1,12 @@
+.wrapper {
+   @apply bg-terminal w-[80%] h-[60%] rounded-2xl box-border shadow-main bg-opacity-20 shadow-lg py-5 pl-5;
+}
+
 .container {
-    @apply bg-terminal w-[80%] h-[60%] rounded-2xl bg-opacity-20 shadow-lg shadow-main box-border p-5
+    @apply overflow-y-scroll w-full h-full box-border;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
 }
