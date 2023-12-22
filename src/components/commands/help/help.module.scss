@@ -1,0 +1,19 @@
+.heading {
+    @apply text-base text-terminal mb-2;
+}
+
+.list {
+    @apply list-none;
+}
+
+.elem {
+    @apply text-base w-full;
+
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    column-gap: 10px;
+}
+
+.command {
+    @apply text-base text-terminal mr-5;
+}

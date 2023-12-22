@@ -6,14 +6,28 @@ import { useEffect } from "react";
 import { UseCommandContext } from "../../contexts/command";
 import { UseContentContext } from "../../contexts/content";
 import Header from "../header/header";
+import Help from "../commands/help/help";
 
 function Terminal() {
   const { command, setCommand } = UseCommandContext();
   const { content, setContent } = UseContentContext();
 
+  const detectCommand = () => {
+    switch (command) {
+      case "help": {
+        return { type: "help", disabled: false };
+      }
+
+      default: {
+        return { type: "error", disabled: false };
+      }
+    }
+  };
+
   useEffect(() => {
     if (command.length > 0) {
       const newContent = [...content];
+      newContent.push(detectCommand());
       newContent.push({ type: "terminal", disabled: false });
       setContent(newContent);
     }
@@ -28,6 +42,10 @@ function Terminal() {
       return <TerminalInput key={index} id={index} />;
     } else if (el?.type === "header") {
       return <Header key={index} />;
+    } else if (el?.type === "help") {
+      return <Help key={index} />;
+    } else if (el?.type === "error") {
+      return <p key={index}>Ошибка</p>;
     }
   };
 
