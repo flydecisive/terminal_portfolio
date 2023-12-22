@@ -5,6 +5,7 @@ import styles from "./help.module.scss";
 function Help() {
   const commandsList = [
     { command: "help", text: "выводит список всех команд" },
+    { command: "about", text: "выводит информацию о разработчике" },
   ];
 
   const createCommand = (el: any, index: number) => {

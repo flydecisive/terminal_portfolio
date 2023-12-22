@@ -8,6 +8,7 @@ import { UseContentContext } from "../../contexts/content";
 import Header from "../header/header";
 import Help from "../commands/help/help";
 import Info from "../info/info";
+import About from "../commands/about/about";
 
 function Terminal() {
   const { command, setCommand } = UseCommandContext();
@@ -17,6 +18,9 @@ function Terminal() {
     switch (command) {
       case "help": {
         return { type: "help", disabled: false };
+      }
+      case "about": {
+        return { type: "about", disabled: false };
       }
 
       default: {
@@ -47,6 +51,8 @@ function Terminal() {
       return <Help key={index} />;
     } else if (el?.type === "error") {
       return <Info type={el?.type} text="команда не найдена" color="red" />;
+    } else if (el?.type === "about") {
+      return <About key={index} />;
     }
   };
 
