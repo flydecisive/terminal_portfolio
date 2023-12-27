@@ -1,0 +1,19 @@
+.icon {
+    width: 25px;
+    height: 25px;
+    @apply fill-terminal;
+}
+
+.contacts {
+    @apply list-none flex flex-col gap-3;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    column-gap: 10px;
+}
+
+.link {
+    @apply hover:text-terminal transition-all;
+}

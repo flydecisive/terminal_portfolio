@@ -9,6 +9,7 @@ import Header from "../header/header";
 import Help from "../commands/help/help";
 import Info from "../info/info";
 import About from "../commands/about/about";
+import Contacts from "../commands/contacts/contacts";
 
 function Terminal() {
   const { command, setCommand } = UseCommandContext();
@@ -21,6 +22,9 @@ function Terminal() {
       }
       case "about": {
         return { type: "about", disabled: false };
+      }
+      case "contacts": {
+        return { type: "contacts", disabled: false };
       }
 
       default: {
@@ -53,6 +57,8 @@ function Terminal() {
       return <Info type={el?.type} text="команда не найдена" color="red" />;
     } else if (el?.type === "about") {
       return <About key={index} />;
+    } else if (el?.type === "contacts") {
+      return <Contacts key={index} />;
     }
   };
 

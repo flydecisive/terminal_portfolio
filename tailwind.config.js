@@ -15,6 +15,15 @@ export default {
         main: "#211830",
         terminal: "#433674",
       },
+      fill: {
+        terminal: "#22eae0",
+      },
+      borderColor: {
+        terminal: "#22eae0",
+      },
+      stroke: {
+        terminal: "#22eae0",
+      },
       textColor: {
         main: "#e60efe",
         terminal: "#22eae0",

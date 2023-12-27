@@ -6,6 +6,7 @@ function Help() {
   const commandsList = [
     { command: "help", text: "выводит список всех команд" },
     { command: "about", text: "выводит информацию о разработчике" },
+    { command: "contacts", text: "выводит список контактов разработчика" },
   ];
 
   const createCommand = (el: any, index: number) => {
