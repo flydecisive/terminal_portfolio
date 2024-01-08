@@ -19,7 +19,6 @@ function Help() {
   };
   return (
     <div className={layoutStyles.wrapper}>
-      <h3 className={styles.heading}>Список команд:</h3>
       <ul className={styles.list}>
         {commandsList.map((el: any, index: number) => createCommand(el, index))}
       </ul>
